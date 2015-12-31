@@ -4,11 +4,10 @@ namespace spec\Day1;
 
 use Day1\Elevator;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class InstructionParserSpec extends ObjectBehavior
 {
-    public function let(Elevator $elevator)
+    function let(Elevator $elevator)
     {
         $this->beConstructedWith($elevator);
     }

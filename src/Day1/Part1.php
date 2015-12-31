@@ -2,7 +2,7 @@
 
 namespace Day1;
 
-class Puzzle1
+class Part1
 {
     public function __invoke()
     {

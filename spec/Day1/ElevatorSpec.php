@@ -3,7 +3,6 @@
 namespace spec\Day1;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ElevatorSpec extends ObjectBehavior
 {
