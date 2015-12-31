@@ -11,20 +11,41 @@ class ElevatorSpec extends ObjectBehavior
         $this->shouldHaveType('Day1\Elevator');
     }
 
-    public function it_should_be_on_zero_to_start()
+    function it_starts_on_ground_floor()
     {
         $this->getFloor()->shouldReturn(0);
     }
 
-    public function it_can_go_up()
+    function it_can_go_up()
     {
         $this->goUp();
         $this->getFloor()->shouldReturn(1);
     }
 
-    public function it_can_go_down()
+    function it_can_go_down()
     {
         $this->goDown();
         $this->getFloor()->shouldReturn(-1);
+    }
+
+    function it_implements_SplSubject()
+    {
+        $this->shouldImplement(\SplSubject::class);
+    }
+
+    function it_notifies_when_going_up(\SplObserver $observer)
+    {
+        $this->attach($observer);
+        $observer->update($this)->shouldBeCalled();
+
+        $this->goUp();
+    }
+
+    function it_notifies_when_going_down(\SplObserver $observer)
+    {
+        $this->attach($observer);
+        $observer->update($this)->shouldBeCalled();
+
+        $this->goDown();
     }
 }

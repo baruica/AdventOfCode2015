@@ -17,14 +17,14 @@ class InstructionParserSpec extends ObjectBehavior
         $this->shouldHaveType('Day1\InstructionParser');
     }
 
-    function it_will_go_up_with_open_paren(Elevator $elevator)
+    function it_goes_up_with_open_paren(Elevator $elevator)
     {
         $elevator->goUp()->shouldBeCalled();
 
         $this->parseInstructions('(');
     }
 
-    function it_will_go_down_with_close_paren(Elevator $elevator)
+    function it_goes_down_with_close_paren(Elevator $elevator)
     {
         $this->parseInstructions(')');
 
@@ -99,5 +99,19 @@ class InstructionParserSpec extends ObjectBehavior
         $elevator->goDown()->shouldBeCalledTimes(5);
 
         $this->parseInstructions(')())())');
+    }
+
+    function it_starts_with_position_zero()
+    {
+        $this->getInstructionPosition()->shouldBe(0);
+    }
+
+    function it_tracks_how_many_instructions_it_parses()
+    {
+        $instructions = '(())(())';
+
+        $this->parseInstructions($instructions);
+
+        $this->getInstructionPosition()->shouldBe(strlen($instructions));
     }
 }
