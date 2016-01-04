@@ -1,6 +1,7 @@
 {
     "require-dev": {
-        "phpspec/phpspec": "^2.4"
+        "phpspec/phpspec": "^2.4",
+        "phpunit/phpunit": "^5.1"
     },
     "autoload": {
         "psr-4": {

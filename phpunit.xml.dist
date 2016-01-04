@@ -1,0 +1,7 @@
+<phpunit backupGlobals="false" colors="true" syntaxCheck="false" bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="Advent of code 2015 Tests">
+            <directory>tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
