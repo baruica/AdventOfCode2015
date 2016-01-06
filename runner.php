@@ -6,11 +6,8 @@ if ($argc != 3) {
     die();
 }
 
-$day = $argv[1];
-$puzzle = $argv[2];
-
-$day = ucfirst(strtolower($day));
-$puzzle = ucfirst(strtolower($puzzle));
+$day    = ucfirst(strtolower($argv[1]));
+$puzzle = ucfirst(strtolower($argv[2]));
 
 $class = "\\$day\\$puzzle";
 
@@ -23,7 +20,6 @@ function getHelp($argv)
     return <<<EOHELP
 
 php $progName DayN PuzzleN
-
 
 EOHELP;
 
