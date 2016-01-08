@@ -34,7 +34,7 @@ class Part2Test extends \PHPUnit_Framework_TestCase
     {
         $this->parser->parseInstructions($instructions);
 
-        $this->assertEquals($expectedPosition, $this->floorObserver->getInstructionPosition());
+        static::assertEquals($expectedPosition, $this->floorObserver->getInstructionPosition());
     }
 
     /**
