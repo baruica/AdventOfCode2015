@@ -29,7 +29,7 @@ class FloorObserver implements \SplObserver
     {
         if ($elevator instanceof Elevator) {
             if (-1 === $elevator->getFloor()) {
-                if (is_null($this->instructionPosition)) {
+                if (null === $this->instructionPosition) {
                     $this->instructionPosition = $this->parser->getInstructionPosition();
                 }
             }
