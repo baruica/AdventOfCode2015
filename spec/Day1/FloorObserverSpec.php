@@ -9,24 +9,24 @@ use Prophecy\Argument;
 
 class FloorObserverSpec extends ObjectBehavior
 {
-    function let(InstructionParser $parser)
+    public function let(InstructionParser $parser)
     {
         $this->beConstructedWith($parser);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType('Day1\FloorObserver');
     }
 
-    function it_implements_SplObserver()
+    public function it_implements_SplObserver()
     {
         $this->shouldImplement(\SplObserver::class);
     }
 
-    function it_records_instruction_position_if_floor_is_minus_one(InstructionParser $parser, Elevator $elevator)
+    public function it_records_instruction_position_if_floor_is_minus_one(InstructionParser $parser, Elevator $elevator)
     {
-        $position = rand(1, 1000);
+        $position = mt_rand(1, 1000);
         $parser->getInstructionPosition()->willReturn($position);
         $elevator->getFloor()->willReturn(-1);
 
@@ -35,9 +35,9 @@ class FloorObserverSpec extends ObjectBehavior
         $this->getInstructionPosition()->shouldReturn($position);
     }
 
-    function it_only_records_the_instruction_position_when_entering_basement_for_the_first_time(InstructionParser $parser, Elevator $elevator)
+    public function it_only_records_the_instruction_position_when_entering_basement_for_the_first_time(InstructionParser $parser, Elevator $elevator)
     {
-        $position = rand(1, 1000);
+        $position = mt_rand(1, 1000);
         $parser->getInstructionPosition()->willReturn($position);
         $elevator->getFloor()->willReturn(-1);
 
