@@ -6,9 +6,7 @@ class InstructionParser
 {
     private $instructionPosition = 0;
 
-    /**
-     * @var Elevator
-     */
+    /** @var Elevator */
     private $elevator;
 
     public function __construct(Elevator $elevator)
@@ -29,7 +27,7 @@ class InstructionParser
         }
     }
 
-    public function getInstructionPosition()
+    public function getInstructionPosition() : int
     {
         return $this->instructionPosition;
     }

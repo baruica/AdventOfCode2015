@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 if ($argc != 3) {
     echo getHelp($argv);
-    die();
+    die;
 }
 
 $day    = ucfirst(strtolower($argv[1]));
@@ -17,10 +17,10 @@ $runner();
 function getHelp($argv)
 {
     $progName = $argv[0];
+
     return <<<EOHELP
 
 php $progName DayN PuzzleN
 
 EOHELP;
-
 }

@@ -2,9 +2,14 @@
 
 namespace spec\Day1;
 
-use Day1\Elevator;
 use PhpSpec\ObjectBehavior;
 
+use Day1\Elevator;
+use Day1\InstructionParser;
+
+/**
+ * @mixin \Day1\InstructionParser
+ */
 class InstructionParserSpec extends ObjectBehavior
 {
     public function let(Elevator $elevator)
@@ -14,7 +19,7 @@ class InstructionParserSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Day1\InstructionParser');
+        $this->shouldHaveType(InstructionParser::class);
     }
 
     public function it_goes_up_with_open_paren(Elevator $elevator)

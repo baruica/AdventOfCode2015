@@ -14,7 +14,7 @@ class Elevator implements \SplSubject
         $this->observers = new \SplObjectStorage();
     }
 
-    public function getFloor()
+    public function getFloor() : int
     {
         return $this->floor;
     }

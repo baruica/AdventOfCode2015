@@ -26,25 +26,19 @@ class Part2Test extends \PHPUnit_Framework_TestCase
     /**
      * @test
      * @dataProvider getInstructions
-     *
-     * @param string $instructions
-     * @param int    $expectedPosition
      */
-    public function close_causes_entering_basement_at_position_one($instructions, $expectedPosition)
+    public function close_causes_entering_basement_at_position_one(string $instructions, int $expectedPosition)
     {
         $this->parser->parseInstructions($instructions);
 
         static::assertEquals($expectedPosition, $this->floorObserver->getInstructionPosition());
     }
 
-    /**
-     * @return array
-     */
-    public function getInstructions()
+    public function getInstructions() : array
     {
-        return array(
-            array(')', 1),
-            array('()())', 5),
-        );
+        return [
+            [')', 1],
+            ['()())', 5],
+        ];
     }
 }

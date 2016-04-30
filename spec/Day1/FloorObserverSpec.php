@@ -2,11 +2,16 @@
 
 namespace spec\Day1;
 
-use Day1\Elevator;
-use Day1\InstructionParser;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
+use Day1\Elevator;
+use Day1\FloorObserver;
+use Day1\InstructionParser;
+
+/**
+ * @mixin FloorObserver
+ */
 class FloorObserverSpec extends ObjectBehavior
 {
     public function let(InstructionParser $parser)
@@ -16,7 +21,7 @@ class FloorObserverSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Day1\FloorObserver');
+        $this->shouldHaveType(FloorObserver::class);
     }
 
     public function it_implements_SplObserver()
@@ -26,7 +31,7 @@ class FloorObserverSpec extends ObjectBehavior
 
     public function it_records_instruction_position_if_floor_is_minus_one(InstructionParser $parser, Elevator $elevator)
     {
-        $position = mt_rand(1, 1000);
+        $position = random_int(1, 1000);
         $parser->getInstructionPosition()->willReturn($position);
         $elevator->getFloor()->willReturn(-1);
 
@@ -37,7 +42,7 @@ class FloorObserverSpec extends ObjectBehavior
 
     public function it_only_records_the_instruction_position_when_entering_basement_for_the_first_time(InstructionParser $parser, Elevator $elevator)
     {
-        $position = mt_rand(1, 1000);
+        $position = random_int(1, 1000);
         $parser->getInstructionPosition()->willReturn($position);
         $elevator->getFloor()->willReturn(-1);
 

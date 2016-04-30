@@ -4,9 +4,7 @@ namespace Day1;
 
 class FloorObserver implements \SplObserver
 {
-    /**
-     * @var InstructionParser
-     */
+    /** @var InstructionParser */
     private $parser;
 
     private $instructionPosition;
@@ -36,7 +34,7 @@ class FloorObserver implements \SplObserver
         }
     }
 
-    public function getInstructionPosition()
+    public function getInstructionPosition() : int
     {
         return $this->instructionPosition;
     }

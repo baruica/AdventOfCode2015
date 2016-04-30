@@ -4,11 +4,16 @@ namespace spec\Day1;
 
 use PhpSpec\ObjectBehavior;
 
+use Day1\Elevator;
+
+/**
+ * @mixin \Day1\Elevator
+ */
 class ElevatorSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType('Day1\Elevator');
+        $this->shouldHaveType(Elevator::class);
     }
 
     public function it_starts_on_ground_floor()
