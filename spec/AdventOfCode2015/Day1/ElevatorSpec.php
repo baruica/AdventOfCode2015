@@ -1,14 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace spec\Day1;
+namespace spec\AdventOfCode2015\Day1;
 
 use PhpSpec\ObjectBehavior;
 
-use Day1\Elevator;
+use AdventOfCode2015\Day1\Elevator;
 
-/**
- * @mixin \Day1\Elevator
- */
 class ElevatorSpec extends ObjectBehavior
 {
     public function it_is_initializable()

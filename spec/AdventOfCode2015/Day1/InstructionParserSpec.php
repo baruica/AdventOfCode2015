@@ -1,15 +1,12 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace spec\Day1;
+namespace spec\AdventOfCode2015\Day1;
 
 use PhpSpec\ObjectBehavior;
 
-use Day1\Elevator;
-use Day1\InstructionParser;
+use AdventOfCode2015\Day1\Elevator;
+use AdventOfCode2015\Day1\InstructionParser;
 
-/**
- * @mixin \Day1\InstructionParser
- */
 class InstructionParserSpec extends ObjectBehavior
 {
     public function let(Elevator $elevator)

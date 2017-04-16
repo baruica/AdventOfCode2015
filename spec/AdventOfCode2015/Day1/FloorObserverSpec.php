@@ -1,17 +1,13 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace spec\Day1;
+namespace spec\AdventOfCode2015\Day1;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
-use Day1\Elevator;
-use Day1\FloorObserver;
-use Day1\InstructionParser;
+use AdventOfCode2015\Day1\Elevator;
+use AdventOfCode2015\Day1\FloorObserver;
+use AdventOfCode2015\Day1\InstructionParser;
 
-/**
- * @mixin FloorObserver
- */
 class FloorObserverSpec extends ObjectBehavior
 {
     public function let(InstructionParser $parser)
